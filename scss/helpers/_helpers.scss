@@ -1,0 +1,20 @@
+@import 'reset';
+@import 'fonts';
+
+@mixin breakpoint($point, $type: max-width) {
+  @media screen and (#{$type}: #{$point}) {
+    @content;
+  }
+}
+
+$tablet: 1024px;
+$mobile: 768px;
+$white-color: #fff;
+$black-color: #000;
+$text-color: #1C1B1A;
+$semi-transparent-text: transparentize($text-color, 0.5);
+$main-blue: #2985F7;
+$border-color: rgba(28, 27, 26, 0.1);
+$divider-color: rgba(28, 27, 26, 0.05);
+
+
