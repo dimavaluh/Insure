@@ -115,13 +115,14 @@ body {
 }
 .content-item-grid {
   width: 282px;
-  min-height: 489px;
+  min-height: 480px;
   margin: 0 0 40px;
   border-radius: 1px;
   display: flex;
   flex-direction: column;
   .item-content {
     border: 1px solid $border-color;
+    border-bottom: none;
     padding: 30px;
     align-self: stretch;
   }

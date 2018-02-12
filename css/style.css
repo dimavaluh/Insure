@@ -165,13 +165,14 @@ body {
 
 .content-item-grid {
   width: 282px;
-  min-height: 489px;
+  min-height: 480px;
   margin: 0 0 40px;
   border-radius: 1px;
   display: flex;
   flex-direction: column; }
   .content-item-grid .item-content {
     border: 1px solid rgba(28, 27, 26, 0.1);
+    border-bottom: none;
     padding: 30px;
     align-self: stretch; }
   .content-item-grid .item-actions {
