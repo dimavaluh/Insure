@@ -97,12 +97,12 @@ body {
     .header-logo img {
       margin: 4px 0; }
   .header-nav {
-    margin: 0 auto;
-    /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!temporary*/ }
+    margin: 0 auto; }
 
 .header-menu {
   display: flex;
-  list-style-type: none; }
+  list-style-type: none;
+  margin-left: -10%; }
 
 .menu-item {
   height: 70px;
@@ -127,7 +127,7 @@ body {
     margin-top: 3px; }
 
 .main .main-subheader {
-  padding: 40px 0 10px;
+  padding: 45px 0 14px;
   border-bottom: 1px solid rgba(28, 27, 26, 0.05);
   display: flex;
   justify-content: space-between; }
@@ -135,44 +135,48 @@ body {
     font-size: 24px;
     color: #1C1B1A; }
 .main .main-content {
-  padding: 40px 0;
+  padding: 30px 0;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap; }
 
-.view-controls .view-control {
-  border: none;
-  width: 18px;
-  height: 18px;
-  background-color: #fff;
-  cursor: pointer; }
-.view-controls .table-view {
-  background: url("../img/table-view-icon.svg") center no-repeat;
-  margin-right: 15px; }
-.view-controls .grid-view {
-  background: url("../img/card-view-icon.svg") center no-repeat;
-  margin-left: 15px;
-  position: relative; }
-  .view-controls .grid-view:before {
-    content: '';
-    width: 1px;
-    height: 30px;
-    background-color: rgba(28, 27, 26, 0.05);
-    position: absolute;
-    top: -6px;
-    left: -17px; }
+.view-controls {
+  padding-top: 3px; }
+  .view-controls .view-control {
+    border: none;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    cursor: pointer; }
+  .view-controls .table-view {
+    background: url("../img/table-view-icon.svg") center no-repeat;
+    margin-right: 14px; }
+  .view-controls .grid-view {
+    background: url("../img/card-view-icon.svg") center no-repeat;
+    margin-left: 14px;
+    position: relative; }
+    .view-controls .grid-view:before {
+      content: '';
+      width: 1px;
+      height: 30px;
+      background-color: rgba(28, 27, 26, 0.05);
+      position: absolute;
+      top: -6px;
+      left: -17px; }
 
 .content-item-grid {
   width: 282px;
-  min-height: 489px;
-  margin: 0 0 40px;
+  min-height: 480px;
+  margin: 0 0 30px;
   border-radius: 1px;
   display: flex;
   flex-direction: column; }
   .content-item-grid .item-content {
+    margin-top: 10px;
     border: 1px solid rgba(28, 27, 26, 0.1);
-    padding: 30px;
+    border-bottom: none;
+    padding: 32px 30px;
     align-self: stretch; }
   .content-item-grid .item-actions {
     height: 40px;
@@ -214,6 +218,68 @@ body {
     width: 16px;
     height: 16px; }
 
+.list-general-info {
+  display: flex; }
+  .list-general-info .list-item-logo {
+    margin-right: 20px; }
+    .list-general-info .list-item-logo img {
+      width: 40px;
+      height: 40px; }
+  .list-general-info .list-item-title {
+    padding-top: 4px; }
+    .list-general-info .list-item-title .list-item-name {
+      font-size: 14px;
+      line-height: 19px;
+      color: #1C1B1A;
+      margin-bottom: 3px; }
+    .list-general-info .list-item-title .list-item-rating .star {
+      width: 11px;
+      height: 11px; }
+
+.list-item {
+  display: flex;
+  align-items: center;
+  min-height: 40px; }
+  .list-item-text {
+    font-size: 14px;
+    line-height: 19px;
+    color: #1C1B1A; }
+  .list-item-image {
+    width: 14px;
+    height: 14px;
+    margin: 3px 5px 2px; }
+  .list-item-color {
+    width: 14px;
+    height: 14px;
+    margin: 3px 5px 2px 0;
+    border-radius: 8px;
+    background-color: #999; }
+  .list-item-actions {
+    min-height: 40px;
+    display: flex;
+    align-items: center; }
+    .list-item-actions .item-overview {
+      padding: 8px 24px;
+      border-radius: 4px;
+      border: 1px solid rgba(28, 27, 26, 0.1);
+      text-transform: uppercase;
+      color: #2985F7;
+      margin-right: 8px;
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 600;
+      letter-spacing: 0.7px; }
+    .list-item-actions .item-buy {
+      padding: 8px 22px;
+      border-radius: 4px;
+      background-color: #2985F7;
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 600;
+      letter-spacing: 1px; }
+
 .content-description .content-row {
   padding: 10px 0;
   border-bottom: 1px solid rgba(28, 27, 26, 0.05);
@@ -228,7 +294,7 @@ body {
     line-height: 19px;
     color: #1C1B1A; }
   .content-description .content-row-add-info-right {
-    margin: 3px 0 0 5px;
+    margin: 3px 0 0 4px;
     width: 15px;
     height: 15px; }
   .content-description .content-row-add-info-left {
@@ -236,22 +302,77 @@ body {
     width: 15px;
     height: 15px; }
 .content-description .price {
-  padding: 30px 8px 0;
+  padding: 29px 8px 4px;
   display: flex;
   align-items: center;
   justify-content: center; }
   .content-description .price .price-num {
-    font-size: 41px; }
+    font-size: 36px; }
   .content-description .price .price-period {
     font-size: 20px; }
 
 .metal-color {
   display: inline-block;
-  margin: 0 5px -2px 0;
+  margin: 0 2px -2px 0;
   height: 14px;
   width: 14px;
   border-radius: 8px;
   background-color: #999999; }
+
+.content-list-parameters {
+  display: flex;
+  width: 100%;
+  padding: 0 0 18px; }
+
+.content-list-parameter {
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 1px;
+  color: rgba(28, 27, 26, 0.6);
+  text-transform: uppercase;
+  font-weight: 700; }
+  .content-list-parameter > p {
+    max-width: 80px; }
+
+.company-parameter {
+  width: 15%;
+  align-self: flex-start; }
+
+.covering-parameter {
+  width: 9.5%;
+  align-self: flex-start; }
+
+.type-parameter {
+  width: 9%;
+  align-self: flex-start; }
+
+.metal-level-parameter {
+  width: 14.5%;
+  align-self: flex-start; }
+
+.drugs-parameter {
+  width: 7.3%;
+  align-self: flex-start; }
+
+.primary-parameter {
+  width: 9.6%;
+  align-self: flex-start; }
+
+.yearly-parameter {
+  width: 10%;
+  align-self: flex-start; }
+
+.price-parameter {
+  width: 10%;
+  align-self: flex-start; }
+
+.content-item-list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1px solid rgba(28, 27, 26, 0.1);
+  padding: 0 0 20px;
+  margin: 0 0 18px; }
 
 /*.footer {
   @extend .side-padding;
