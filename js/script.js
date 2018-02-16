@@ -112,66 +112,81 @@ const insurances = [
 ];
 const insuranceGrid = `
     ${insurances.map(insurance => `
-        <div class="content-item-grid">
-                <div class="item-content">
-                    <div class="content-general-info">
-                        <div class="item-logo">
-                            <img src="img/${insurance.logoUrl}">
-                        </div>
-                        <div class="item-title">
-                            <p class="item-name">${insurance.company}</p>
-                            <div class="item-rating">
-                                <img class="star" src="img/Star.png" alt="★">
-                                <img class="star" src="img/Star.png" alt="★">
-                                <img class="star" src="img/Star.png" alt="★">
-                                <img class="star" src="img/Star.png" alt="★">
-                                <img class="star" src="img/Star-empty.png" alt="☆">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-description">
-                        <div class="content-row">
-                            <div class="content-row-name">Covering:</div>
-                            <div class="content-row-status">${insurance.covering}</div>
-                        </div>
-                        <div class="content-row">
-                            <div class="content-row-name">Type:</div>
-                            <div class="content-row-status">${insurance.type}</div>
-                            <img class="content-row-add-info-right" src="img/info-icon.png" alt="?">
-                        </div>
-                        <div class="content-row">
-                            <div class="content-row-name">Metal level:</div>
-                            <div class="content-row-status">
-                                <span style="background-color:${insurance.metalLevelColor}" class="metal-color"></span>
-                                ${insurance.metalLevel}
-                            </div>
-                            <img class="content-row-add-info-right" src="img/info-icon.png" alt="?">
-                        </div>
-                        <div class="content-row">
-                            <img class="content-row-add-info-left" src="img/info-icon.png" alt="?">
-                            <div class="content-row-name">Drugs:</div>
-                            <div class="content-row-status">${insurance.drugs}</div>
-                        </div>
-                        <div class="content-row">
-                            <img class="content-row-add-info-left" src="img/info-icon.png" alt="?">
-                            <div class="content-row-name">Primary Care Visits:</div>
-                            <div class="content-row-status">${insurance.careVisits}</div>
-                        </div>
-                        <div class="content-row">
-                            <img class="content-row-add-info-left" src="img/info-icon.png" alt="?">
-                            <div class="content-row-name">Yearly Deductible:</div>
-                            <div class="content-row-status">${insurance.yearlyDeductible}</div>
-                        </div>
-                        <div class="price">
-                            <span class="price-num">${insurance.price}/<span class="price-period">mon</span></span>
-                        </div>
-                    </div>
+    <div class="content-item-grid">
+        <div class="item-content">
+            <div class="content-general-info">
+                <div class="item-logo">
+                    <img src="img/${insurance.logoUrl}">
                 </div>
-                <div class="item-actions">
-                    <a class="item-overview" href="#"><span>overview</span></a>
-                    <a class="item-buy" href="#"><span>buy</span></a>
+                <div class="item-title">
+                    <p class="item-name">${insurance.company}</p>
+                    <div class="item-rating">
+                        <img class="star" src="img/Star.png" alt="★">
+                        <img class="star" src="img/Star.png" alt="★">
+                        <img class="star" src="img/Star.png" alt="★">
+                        <img class="star" src="img/Star.png" alt="★">
+                        <img class="star" src="img/Star-empty.png" alt="☆">
+                    </div>
                 </div>
             </div>
+            <div class="content-description">
+                <div class="content-row">
+                    <div class="content-row-name">Covering:</div>
+                    <div class="content-row-status">${insurance.covering}</div>
+                </div>
+                <div class="content-row">
+                    <div class="content-row-name">Type:</div>
+                    <div class="content-row-status">${insurance.type}</div>
+                    <div class="additional-info">
+                        <span class="tooltip tt-right">Some additional information</span>
+                        <img class="content-row-add-info-right" src="img/info-icon.png" alt="?">
+                    </div>
+                </div>
+                <div class="content-row">
+                    <div class="content-row-name">Metal level:</div>
+                    <div class="content-row-status">
+                        <span style="background-color:${insurance.metalLevelColor}" class="metal-color"></span>
+                        ${insurance.metalLevel}
+                    </div>
+                    <div class="additional-info">
+                        <span class="tooltip tt-right">Some additional information</span>
+                        <img class="content-row-add-info-right" src="img/info-icon.png" alt="?">
+                    </div>
+                </div>
+                <div class="content-row">
+                    <div class="additional-info">
+                        <span class="tooltip tt-left">Some additional information</span>
+                        <img class="content-row-add-info-left" src="img/info-icon.png" alt="?">
+                    </div>
+                    <div class="content-row-name">Drugs:</div>
+                    <div class="content-row-status">${insurance.drugs}</div>
+                </div>
+                <div class="content-row">
+                    <div class="additional-info">
+                        <span class="tooltip tt-left">Some additional information</span>
+                        <img class="content-row-add-info-left" src="img/info-icon.png" alt="?">
+                    </div>
+                    <div class="content-row-name">Primary Care Visits:</div>
+                    <div class="content-row-status">${insurance.careVisits}</div>
+                </div>
+                <div class="content-row">
+                    <div class="additional-info">
+                        <span class="tooltip tt-left">Some additional information</span>
+                        <img class="content-row-add-info-left" src="img/info-icon.png" alt="?">
+                    </div>
+                    <div class="content-row-name">Yearly Deductible:</div>
+                    <div class="content-row-status">${insurance.yearlyDeductible}</div>
+                </div>
+                <div class="price">
+                    <span class="price-num">${insurance.price}/<span class="price-period">mon</span></span>
+                </div>
+            </div>
+        </div>
+        <div class="item-actions">
+            <a class="item-overview" href="#"><span>overview</span></a>
+            <a class="item-buy" href="#"><span>buy</span></a>
+        </div>
+    </div>
     `).join('')}
 `;
 
@@ -208,14 +223,19 @@ const insuranceList = `
             </div>
             <div class="list-item type-parameter">
                 <p class="list-item-text">${insurance.type}</p>
-                <img class="list-item-image" src="img/info-icon.png" alt="?">
+                <div class="additional-info list-item-image">
+                    <span class="tooltip tt-list">Some additional information</span>
+                    <img class="content-row-add-info-right" src="img/info-icon.png" alt="?">
+                </div>
             </div>
             <div class="list-item metal-level-parameter">
                 <div style="background-color:${insurance.metalLevelColor}" class="list-item-color"></div>
                 <p class="list-item-text">${insurance.metalLevel}</p>
-                <img class="list-item-image" src="img/info-icon.png" alt="?">
+                <div class="additional-info list-item-image">
+                    <span class="tooltip tt-list">Some additional information</span>
+                    <img class="content-row-add-info-right" src="img/info-icon.png" alt="?">
+                </div>
             </div>
-
             <div class="list-item drugs-parameter">
                 <p class="list-item-text">${insurance.drugs}</p>
             </div>
