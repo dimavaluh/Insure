@@ -85,6 +85,8 @@ body {
 }
 
 .main {
+  max-width: 1440px;
+  margin: 0 auto;
   min-height: calc(100vh - 150px);
   @extend .side-padding;
   .main-subheader {
@@ -95,6 +97,9 @@ body {
     &-title {
       font-size: 24px;
       color: $text-color;
+    }
+    @include breakpoint($mobile) {
+      justify-content: center;
     }
   }
   .main-content {
@@ -136,7 +141,7 @@ body {
       left: -17px;
     }
   }
-  @include breakpoint($tablet) {
+  @include breakpoint(1250px) {
     display: none;
   }
 }
@@ -148,21 +153,9 @@ body {
   display: flex;
   flex-direction: column;
   @include breakpoint($tablet) {
-    &:nth-child(odd) {
-      margin: 0 12px 30px 24px;
-    }
-    &:nth-child(even) {
-      margin: 0 24px 30px 12px;
-    }
+    margin: 0 12px 30px;
   }
-  @include breakpoint($mobile) {
-    &:nth-child(odd) {
-      margin: 0 24px 30px;
-    }
-    &:nth-child(even) {
-      margin: 0 24px 30px;
-    }
-  }
+
   .item-content {
     margin-top: 10px;
     border: 1px solid $border-color;
@@ -415,6 +408,9 @@ body {
   height: 80px;
   display: flex;
   align-items: center;
+  @include breakpoint($mobile) {
+    justify-content: center;
+  }
 }
 .footer-details {
   background-color: $white-color;
@@ -424,6 +420,9 @@ body {
   font-size: 12px;
   > * {
     margin-right: 30px;
+    @include breakpoint($mobile) {
+      margin-right: 0;
+    }
   }
   .footer-title {
     color: $black-color;
@@ -435,5 +434,21 @@ body {
     &:hover {
       color: $black-color;
     }
+    @include breakpoint($tablet) {
+      display: none;
+    }
+  }
+}
+.content-placeholder {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  p {
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 1px;
+    color: transparentize($text-color, 0.4);
   }
 }
