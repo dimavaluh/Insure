@@ -191,6 +191,11 @@ body {
       font-weight: 600;
       color: $main-blue;
       text-transform: uppercase;
+      transition: 0.3s;
+      &:hover {
+        color: $white-color;
+        background-color: $main-blue;
+      }
     }
     .item-buy {
       border-bottom-right-radius: 2px;
@@ -200,6 +205,10 @@ body {
       font-weight: 600;
       color: $white-color;
       text-transform: uppercase;
+      transition: 0.3s;
+      &:hover {
+        background-color: darken($main-blue, 20%);
+      }
     }
   }
 }
@@ -292,6 +301,12 @@ body {
       line-height: 14px;
       font-weight: 600;
       letter-spacing: 0.7px;
+      transition: 0.3s;
+      &:hover {
+        border: $main-blue;
+        color: $white-color;
+        background-color: $main-blue;
+      }
     }
     .item-buy {
       padding: 8px 22px;
@@ -303,6 +318,10 @@ body {
       line-height: 14px;
       font-weight: 600;
       letter-spacing: 1px;
+      transition: 0.3s;
+      &:hover {
+        background-color: darken($main-blue, 20%);
+      }
     }
   }
 }
