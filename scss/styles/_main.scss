@@ -19,6 +19,11 @@ body {
   box-shadow: 0 1px 4px 0 rgba(28, 27, 26, 0.07);
   display: flex;
   height: 70px;
+  align-items: center;
+  top: 0;
+  position: sticky;
+  background-color: $white-color;
+  z-index: 10;
   &-logo {
     padding: 24px 8px 24px 0;
     img {
@@ -26,13 +31,27 @@ body {
     }
   }
   &-nav {
-    margin: 0 auto; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!temporary*/
+    margin: 0 auto;
+    @include breakpoint($tablet){
+      display: none;
+    }
+  }
+  &-burger {
+    display: none;
+    @include breakpoint($tablet) {
+      display: block;
+      margin-left: auto;
+      background: url("../img/burger.svg") right no-repeat;
+      width: 40px;
+      height: 70px;
+    }
   }
 }
 
 .header-menu {
   display: flex;
   list-style-type: none;
+  margin-left: -10%;
 }
 
 .menu-item {
@@ -66,9 +85,10 @@ body {
 }
 
 .main {
+  min-height: calc(100vh - 150px);
   @extend .side-padding;
   .main-subheader {
-    padding: 40px 0 10px;
+    padding: 45px 0 14px;
     border-bottom: 1px solid $divider-color;
     display: flex;
     justify-content: space-between;
@@ -78,15 +98,19 @@ body {
     }
   }
   .main-content {
-    padding: 40px 0;
+    padding: 30px 0 10px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
+    @include breakpoint($tablet) {
+      justify-content: center;
+    }
   }
 }
 
 .view-controls {
+  padding-top: 3px;
   .view-control {
     border: none;
     width: 18px;
@@ -96,11 +120,11 @@ body {
   }
   .table-view {
     background: url("../img/table-view-icon.svg") center no-repeat;
-    margin-right: 15px;
+    margin-right: 14px;
   }
   .grid-view {
     background: url("../img/card-view-icon.svg") center no-repeat;
-    margin-left: 15px;
+    margin-left: 14px;
     position: relative;
     &:before {
       content: '';
@@ -112,18 +136,42 @@ body {
       left: -17px;
     }
   }
+  @include breakpoint($tablet) {
+    display: none;
+  }
 }
 .content-item-grid {
   width: 282px;
   min-height: 480px;
-  margin: 0 0 40px;
+  margin: 0 0 30px;
   border-radius: 1px;
   display: flex;
   flex-direction: column;
+  @include breakpoint($tablet) {
+    &:nth-child(odd) {
+      margin: 0 12px 30px 24px;
+    }
+    &:nth-child(even) {
+      margin: 0 24px 30px 12px;
+    }
+  }
+  @include breakpoint($mobile) {
+    &:nth-child(odd) {
+      margin: 0 24px 30px;
+    }
+    &:nth-child(even) {
+      margin: 0 24px 30px;
+    }
+  }
   .item-content {
+    margin-top: 10px;
     border: 1px solid $border-color;
     border-bottom: none;
+<<<<<<< HEAD
     padding: 30px;
+=======
+    padding: 32px 30px;
+>>>>>>> 94570b2f7358592b24345edca43ebf9e053fc934
     align-self: stretch;
   }
   .item-actions {
@@ -177,6 +225,83 @@ body {
     }
   }
 }
+.list-general-info {
+  display: flex;
+  .list-item-logo {
+    margin-right: 20px;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .list-item-title {
+    padding-top: 4px;
+    .list-item-name {
+      font-size: 14px;
+      line-height: 19px;
+      color: $text-color;
+      margin-bottom: 3px;
+    }
+    .list-item-rating {
+      .star {
+        width: 11px;
+        height: 11px;
+      }
+    }
+  }
+}
+.list-item {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  &-text {
+    font-size: 14px;
+    line-height: 19px;
+    color: $text-color;
+  }
+  &-image {
+    width: 14px;
+    height: 14px;
+    margin: 3px 5px 2px;
+  }
+  &-color {
+    width: 14px;
+    height: 14px;
+    margin: 3px 5px 2px 0;
+    border-radius: 8px;
+    background-color: #999;
+  }
+  &-actions {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    width: 15.1%;
+    justify-content: flex-end;
+    .item-overview {
+      padding: 8px 24px;
+      border-radius: 4px;
+      border: 1px solid $border-color;
+      text-transform: uppercase;
+      color: $main-blue;
+      margin-right: 8px;
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 600;
+      letter-spacing: 0.7px;
+    }
+    .item-buy {
+      padding: 8px 22px;
+      border-radius: 4px;
+      background-color: $main-blue;
+      text-transform: uppercase;
+      color: $white-color;
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+  }
+}
 .content-description {
   .content-row {
     padding: 10px 0;
@@ -194,7 +319,7 @@ body {
       color: $text-color;
     }
     &-add-info-right {
-      margin: 3px 0 0 5px;
+      margin: 3px 0 0 4px;
       width: 15px;
       height: 15px;
     }
@@ -205,12 +330,12 @@ body {
     }
   }
   .price {
-    padding: 30px 8px 0;
+    padding: 29px 8px 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     .price-num {
-      font-size: 41px;
+      font-size: 36px;
     }
     .price-period {
       font-size: 20px;
@@ -219,15 +344,74 @@ body {
 }
 .metal-color {
   display: inline-block;
-  margin: 0 5px -2px 0;
+  margin: 0 2px -2px 0;
   height: 14px;
   width: 14px;
   border-radius: 8px;
   background-color: #999999;
 }
+.content-list-parameters {
+  display: flex;
+  width: 100%;
+  padding: 0 0 18px;
+}
+.content-list-parameter {
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 1px;
+  color: transparentize($text-color, 0.4);
+  text-transform: uppercase;
+  font-weight: 700;
+  > p {
+    max-width: 80px;
+  }
+}
+.company-parameter {
+  width: 15%;
+  align-self: flex-start;
+}
+.covering-parameter {
+  width: 9.5%;
+  align-self: flex-start;
+}
+.type-parameter {
+  width: 9%;
+  align-self: flex-start;
+}
+.metal-level-parameter {
+  width: 14.5%;
+  align-self: flex-start;
+}
+.drugs-parameter {
+  width: 7.3%;
+  align-self: flex-start;
+}
+.primary-parameter {
+  width: 9.6%;
+  align-self: flex-start;
+}
+.yearly-parameter {
+  width: 10%;
+  align-self: flex-start;
+}
+.price-parameter {
+  width: 10%;
+  align-self: flex-start;
+}
+.content-item-list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+  padding: 0 0 20px;
+  margin: 0 0 18px;
+  &:last-child {
+    margin-bottom: 80px;
+  }
+}
 
 
-/*.footer {
+.footer {
   @extend .side-padding;
   width: 100%;
   border: 1px solid rgba(28, 27, 26, 0.1);
@@ -237,6 +421,7 @@ body {
   align-items: center;
 }
 .footer-details {
+  background-color: $white-color;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -244,14 +429,15 @@ body {
   > * {
     margin-right: 30px;
   }
-  p {
+  .footer-title {
     color: $black-color;
   }
-  a {
+  .footer-link {
+    padding: 8px 0;
     color: transparentize($black-color, 0.3);
     transition: 0.3s;
     &:hover {
       color: $black-color;
     }
   }
-}*/
+}
