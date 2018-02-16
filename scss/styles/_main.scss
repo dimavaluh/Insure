@@ -122,6 +122,14 @@ body {
     height: 18px;
     background-color: $white-color;
     cursor: pointer;
+    opacity: 0.4;
+    transition: 0.3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .selected-view {
+    opacity: 1;
   }
   .table-view {
     background: url("../img/table-view-icon.svg") center no-repeat;

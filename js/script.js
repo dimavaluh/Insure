@@ -239,9 +239,14 @@ const insuranceList = `
 
 function showItemsInList() {
     mainContent.innerHTML = insuranceList;
+    this.classList.add('selected-view');
+    tableView.classList.add('selected-view');
+    gridView.classList.remove('selected-view');
 }
 function showItemsInGrid() {
     mainContent.innerHTML = insuranceGrid;
+    gridView.classList.add('selected-view');
+    tableView.classList.remove('selected-view');
 }
 
 const gridView = document.querySelector('.grid-view');
